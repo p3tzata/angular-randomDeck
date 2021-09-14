@@ -1,0 +1,11 @@
+li {
+    list-style-type: none;
+}
+
+
+img {
+    
+    height: auto; /*to preserve the aspect ratio of the image*/
+
+}
+

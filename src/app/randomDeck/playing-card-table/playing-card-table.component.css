@@ -1,0 +1,28 @@
+button {
+    border: none;
+    background: rgb(172, 168, 168);
+    padding: 6px;
+    border-radius: 3px;
+    margin: 5px;
+    }
+    button:hover {
+    background: #63aeec;
+    color: white;
+    }
+
+.main-table  {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+}
+
+.main-table-cardHolder {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    padding: 20px;
+    border-width: "5px";
+    gap: 12px;
+}
+
+
