@@ -19,10 +19,7 @@ button {
 .main-table-cardHolder {
     display: inline-flex;
     flex-wrap: wrap;
-    justify-content: left;
-    padding: 20px;
-    border-width: "5px";
-    gap: 12px;
+    justify-content: left; 
 }
 
 
