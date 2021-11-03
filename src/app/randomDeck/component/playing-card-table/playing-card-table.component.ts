@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { disableDebugTools } from '@angular/platform-browser';
-import { PlayCard } from '../model/playCard.model';
-import { PlayingCardServiceService } from '../playing-card-service.service';
+import { PlayCard } from '../../model/playCard.model';
+import { PlayingCardServiceService } from '../../service/playing-card-service.service';
+
 
 @Component({
   selector: 'app-playing-card-table',
@@ -11,6 +12,7 @@ import { PlayingCardServiceService } from '../playing-card-service.service';
 export class PlayingCardTableComponent implements OnInit {
 
   deck: PlayCard[];
+  deckDefault: PlayCard[];
   displayCard: PlayCard[];
   pointerOfDeck:number=0;
   countOfShownCard:number=3;
@@ -23,8 +25,9 @@ export class PlayingCardTableComponent implements OnInit {
 
   constructor(private playingCardServiceService: PlayingCardServiceService ) { 
     this.displayCard=[];
+    this.deck=[];
     this.reloadNumberBtnAppend();
-    this.deck=this.playingCardServiceService.getDeck_32();
+    this.deckDefault=this.playingCardServiceService.getDeck_32();
     this.generate();
 
     // debugger;
@@ -49,12 +52,14 @@ export class PlayingCardTableComponent implements OnInit {
 
   randomDeck(): void {
 
-    for (let i=0;i<this.deck.length;i++) {
+    for (let i=0;i<this.deckDefault.length;i++) {
 
       let randomInt=this.playingCardServiceService.getRandomInt(this.deck.length-1);
-      let currentPlayCard=this.deck[i];
-      this.deck[i]=this.deck[randomInt];
-      this.deck[randomInt]=currentPlayCard;
+      
+      let currentPlayCard: PlayCard = this.deckDefault[i];
+
+      
+
 
     }
 

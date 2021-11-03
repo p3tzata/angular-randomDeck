@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { PlayCard } from '../model/playCard.model';
+import { PlayCard } from '../../model/playCard.model';
+
+
+
 
 @Component({
   selector: 'app-playing-card',
