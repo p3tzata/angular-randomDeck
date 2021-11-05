@@ -1,8 +1,9 @@
-import { PlayCard } from "./playCard.model";
+import { PlayCardCount } from "./enum/play-card-count";
+
 
 export class PlayCardRangeRandomCfg {
     
-    constructor(public playCard: PlayCard, public min:number, public max:number) {
+    constructor(public playCardCount: PlayCardCount, public minIndex:number, public maxIndex:number) {
 
     }
 }

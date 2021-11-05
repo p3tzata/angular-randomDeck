@@ -38,6 +38,9 @@ export class PlayingCardTableComponent implements OnInit {
   }
 
   generate(): void {
+
+    let PlayCardGame=this.playingCardServiceService.generateConfiguration();
+
     this.stopSecCounber();
     this.counterSec=0;
     this.randomDeck()
