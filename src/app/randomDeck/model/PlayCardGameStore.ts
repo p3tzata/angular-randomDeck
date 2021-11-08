@@ -1,4 +1,5 @@
 import {IHashStringKey} from '../interface/IHashStringKey'
+import { PlayCardSuits } from './enum/play-card-suits';
 import { PlayCardRangeRandomCfg } from './PlayCardRangeRandomCfg.model';
 import { PlayCardStoreRandomCfg } from './PlayCardStoreRandomCfg.model';
 
@@ -9,16 +10,16 @@ export class PlayCardGameStore {
 
     }
 
-    addTrump(playCardStore:PlayCardStoreRandomCfg) {
+    add(playCardSuits: PlayCardSuits, playCardStoreCfg:PlayCardStoreRandomCfg) {
        
-        this.store['trump']=playCardStore;
+        this.store[playCardSuits]=playCardStoreCfg;
 
     }
 
-    addNoTrump(playCardStore:PlayCardStoreRandomCfg) {
-       
-        this.store['noTrump']=playCardStore;
-
+    get(playCardSuits: PlayCardSuits): PlayCardStoreRandomCfg{
+        return this.store[playCardSuits];
     }
 
+
+ 
 }

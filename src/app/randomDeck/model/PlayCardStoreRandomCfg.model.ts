@@ -15,6 +15,10 @@ export class PlayCardStoreRandomCfg {
 
     }
 
+    get(playCardCount: PlayCardCount):PlayCardRangeRandomCfg {
+        return this.store[playCardCount];
+    }
+
 
 
 }

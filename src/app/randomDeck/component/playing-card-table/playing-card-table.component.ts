@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { disableDebugTools } from '@angular/platform-browser';
+import { PlayCardGameType } from '../../model/enum/play-card-game-type';
+import { PlayCardSuits } from '../../model/enum/play-card-suits';
 import { PlayCard } from '../../model/playCard.model';
+import { PlayCardGameStore } from '../../model/PlayCardGameStore';
+import { PlayCardRangeRandomCfg } from '../../model/PlayCardRangeRandomCfg.model';
+import { PlayCardStoreRandomCfg } from '../../model/PlayCardStoreRandomCfg.model';
 import { PlayingCardServiceService } from '../../service/playing-card-service.service';
+import { Util } from '../../util/util';
 
 
 @Component({
@@ -10,9 +16,8 @@ import { PlayingCardServiceService } from '../../service/playing-card-service.se
   styleUrls: ['./playing-card-table.component.css']
 })
 export class PlayingCardTableComponent implements OnInit {
-
+  occupyVector: boolean[];
   deck: PlayCard[];
-  deckDefault: PlayCard[];
   displayCard: PlayCard[];
   pointerOfDeck:number=0;
   countOfShownCard:number=3;
@@ -21,13 +26,15 @@ export class PlayingCardTableComponent implements OnInit {
   appendCounterToPickBtn: string=""
   counterSec:number=0;
   counterSecId:any="";
+  util:Util=new Util();
 
 
   constructor(private playingCardServiceService: PlayingCardServiceService ) { 
     this.displayCard=[];
-    this.deck=[];
+    this.occupyVector=[];
+   // this.deck=[];
     this.reloadNumberBtnAppend();
-    this.deckDefault=this.playingCardServiceService.getDeck_32();
+    this.deck=this.playingCardServiceService.getDeck_32();
     this.generate();
 
     // debugger;
@@ -39,11 +46,12 @@ export class PlayingCardTableComponent implements OnInit {
 
   generate(): void {
 
-    let PlayCardGame=this.playingCardServiceService.generateConfiguration();
+    let playCardGame=this.playingCardServiceService.generateConfiguration(PlayCardGameType.AllTrump);
 
     this.stopSecCounber();
     this.counterSec=0;
-    this.randomDeck()
+    this.randomDeckByBlind();
+    this.randomDeckByCfg(playCardGame);
     this.pointerOfDeck=0;
     this.displayCard=[];
     this.pickNextCardsIsDisabled=false;
@@ -51,23 +59,86 @@ export class PlayingCardTableComponent implements OnInit {
     
   }
 
+  randomDeckByCfg(playCardGame: PlayCardGameStore) {
+    
+    this.occupyVector=[];
+    console.log(playCardGame);
 
-
-  randomDeck(): void {
-
-    for (let i=0;i<this.deckDefault.length;i++) {
-
-      let randomInt=this.playingCardServiceService.getRandomInt(this.deck.length-1);
+    for (let i=0;i<this.deck.length;i++) {
       
-      let currentPlayCard: PlayCard = this.deckDefault[i];
-
+      if (this.occupyVector[i]==true) {
+        continue;
+      }
+      let randomInt:number=-1;
+      let finalRandomInt=-1;
       
 
+      let currentPlayCard:PlayCard=this.deck[i];
+      let playCardStoreRandomCfg:PlayCardStoreRandomCfg =playCardGame.get(currentPlayCard.Suits);
+      let playCardRangeRandomCfg:PlayCardRangeRandomCfg=playCardStoreRandomCfg.get(currentPlayCard.count);
 
+      if (playCardRangeRandomCfg==null) {
+        continue;
+      }
+      //debugger;
+      
+      let tryCount:number=10;  
+      while(tryCount>0) {
+        randomInt = this.util.getRandomIntInclusive(playCardRangeRandomCfg.minIndex,playCardRangeRandomCfg.maxIndex);
+
+        if(this.occupyVector[randomInt]==null) {
+          finalRandomInt=randomInt;
+          break;
+        } else {
+        //debugger;
+        tryCount--;
+        }
+      }
+
+      
+      if (finalRandomInt==-1) {
+        continue;
+      }
+
+
+
+      let tempPlayCard: PlayCard = this.deck[i];
+      let randomPlayCard: PlayCard =this.deck[finalRandomInt];
+     
+       this.deck[i]=randomPlayCard;
+       this.deck[finalRandomInt]=tempPlayCard;
+       this.occupyVector[finalRandomInt]=true;
+
+
+
+      }
+
+      //debugger;
+
+
+  }
+
+
+
+  randomDeckByBlind(): void {
+    let i=0
+    while (i<3) {
+      for (let i=0;i<this.deck.length;i++) {
+      //debugger;
+      let randomInt=this.util.getRandomInt(this.deck.length-1);
+      
+      let tempPlayCard: PlayCard = this.deck[i];
+      let randomPlayCard: PlayCard =this.deck[randomInt];
+      
+
+      this.deck[i]=randomPlayCard;
+      this.deck[randomInt]=tempPlayCard;
+
+      }
+     // console.log("Random pass: "+i)
+      i++;
     }
-
-
-
+   // debugger;
   }
 
 
