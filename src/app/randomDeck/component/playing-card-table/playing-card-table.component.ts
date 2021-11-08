@@ -63,7 +63,7 @@ export class PlayingCardTableComponent implements OnInit {
     
     this.occupyVector=[];
     console.log(playCardGame);
-
+    let tryCount:number=100; 
     for (let i=0;i<this.deck.length;i++) {
       
       if (this.occupyVector[i]==true) {
@@ -82,7 +82,7 @@ export class PlayingCardTableComponent implements OnInit {
       }
       //debugger;
       
-      let tryCount:number=10;  
+       
       while(tryCount>0) {
         randomInt = this.util.getRandomIntInclusive(playCardRangeRandomCfg.minIndex,playCardRangeRandomCfg.maxIndex);
 
