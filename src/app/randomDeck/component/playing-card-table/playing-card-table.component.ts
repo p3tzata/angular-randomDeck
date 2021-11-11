@@ -20,20 +20,31 @@ export class PlayingCardTableComponent implements OnInit {
   deck: PlayCard[];
   displayCard: PlayCard[];
   pointerOfDeck:number=0;
-  countOfShownCard:number=3;
+  countOfShownCard:number=4;
+  gameType:number=3;
   numberBtnAppend:string="";
+  gameTypeButtonName:string="Test";
   pickNextCardsIsDisabled: boolean=false;
   appendCounterToPickBtn: string=""
   counterSec:number=0;
   counterSecId:any="";
   util:Util=new Util();
-
+  mappingGameType: PlayCardGameType[];
 
   constructor(private playingCardServiceService: PlayingCardServiceService ) { 
+    this.mappingGameType=[];
+    this.mappingGameType[0]=PlayCardGameType.ClubsTrump;
+    this.mappingGameType[1]=PlayCardGameType.DiamondsTrump;
+    this.mappingGameType[2]=PlayCardGameType.HeartsTrump;
+    this.mappingGameType[3]=PlayCardGameType.SpadesTrump;
+    this.mappingGameType[4]=PlayCardGameType.NoTrump;
+    this.mappingGameType[5]=PlayCardGameType.AllTrump;
+
     this.displayCard=[];
     this.occupyVector=[];
    // this.deck=[];
     this.reloadNumberBtnAppend();
+    this.reloadgameTypeButtonName();
     this.deck=this.playingCardServiceService.getDeck_32();
     this.generate();
 
@@ -44,9 +55,16 @@ export class PlayingCardTableComponent implements OnInit {
     this.numberBtnAppend="("+this.countOfShownCard+")";
   }
 
+
+  reloadgameTypeButtonName():void {
+   
+    
+    this.gameTypeButtonName=this.mappingGameType[this.gameType];
+  }
+
   generate(): void {
 
-    let playCardGame=this.playingCardServiceService.generateConfiguration(PlayCardGameType.AllTrump);
+    let playCardGame=this.playingCardServiceService.generateConfiguration(this.mappingGameType[this.gameType]);
 
     this.stopSecCounber();
     this.counterSec=0;
@@ -85,8 +103,12 @@ export class PlayingCardTableComponent implements OnInit {
        
       while(tryCount>0) {
         randomInt = this.util.getRandomIntInclusive(playCardRangeRandomCfg.minIndex,playCardRangeRandomCfg.maxIndex);
+        let randomPlayCard:PlayCard=this.deck[randomInt];
+        let randomplayCardStoreRandomCfg:PlayCardStoreRandomCfg =playCardGame.get(randomPlayCard.Suits);
+       let randomplayCardRangeRandomCfg:PlayCardRangeRandomCfg=randomplayCardStoreRandomCfg.get(randomPlayCard.count);
 
-        if(this.occupyVector[randomInt]==null) {
+        if(this.occupyVector[randomInt]==null && randomplayCardRangeRandomCfg==null) {
+
           finalRandomInt=randomInt;
           break;
         } else {
@@ -198,6 +220,19 @@ export class PlayingCardTableComponent implements OnInit {
       this.generate();
 
   }
+
+  changeGameType() {
+  
+    if (this.gameType==5) {
+      this.gameType=-1;
+    }
+
+    this.gameType++;
+    this.reloadgameTypeButtonName();
+    this.generate();
+
+}
+
 
 
 }
