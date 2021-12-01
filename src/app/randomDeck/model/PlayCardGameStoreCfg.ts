@@ -21,12 +21,12 @@ export class PlayCardGameStoreCfg {
 
     }
 
-    getTrump(hazardPointer:number): PlayCardStoreRandomCfg{
-       return this.store['trump'].getRandom(hazardPointer);  
+    getTrump(): PlayCardStoreRandomCfg{
+       return this.store['trump'].getRandom();  
     }
 
-    getNoTrump(hazardPointer:number): PlayCardStoreRandomCfg{
-        return this.store['noTrump'].getRandom(hazardPointer);  
+    getNoTrump(): PlayCardStoreRandomCfg{
+        return this.store['noTrump'].getRandom();  
      }
 
 }
