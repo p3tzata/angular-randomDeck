@@ -80,7 +80,7 @@ export class PlayingCardTableComponent implements OnInit {
   randomDeckByCfg(playCardGame: PlayCardGameStore) {
     
     this.occupyVector=[];
-    console.log(playCardGame);
+    //console.log(playCardGame);
     let tryCount:number=100; 
     for (let i=0;i<this.deck.length;i++) {
       
@@ -113,6 +113,7 @@ export class PlayingCardTableComponent implements OnInit {
           break;
         } else {
         //debugger;
+        //console.log('debug random by cfg'+tryCount)
         tryCount--;
         }
       }

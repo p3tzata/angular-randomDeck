@@ -86,16 +86,9 @@ export class PlayingCardServiceService {
     playCardStoreRandomCfgTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.J,28,31));
     playCardStoreRandomCfgTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
 
- 
-    let playCardHazardStoreTrump= new PlayCardHazardStoreCfg();
-    playCardHazardStoreTrump.add(12,playCardStoreRandomCfgTrump1);
-    playCardHazardStoreTrump.add(24,playCardStoreRandomCfgTrump2);
-    playCardHazardStoreTrump.add(36,playCardStoreRandomCfgTrump3);
-    playCardHazardStoreTrump.add(48,playCardStoreRandomCfgTrump4);
-    playCardHazardStoreTrump.add(60,playCardStoreRandomCfgTrump5);
-    playCardHazardStoreTrump.add(72,playCardStoreRandomCfgTrump6);
-    playCardHazardStoreTrump.add(84,playCardStoreRandomCfgTrump7);
-    playCardHazardStoreTrump.add(100,playCardStoreRandomCfgTrump8);
+    
+    //let playCardHazardStoreTrump= new PlayCardHazardStoreCfg();
+   
     
     let playCardStoreRandomCfgNoTrump1 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.A,0,3));
@@ -133,64 +126,40 @@ export class PlayingCardServiceService {
     playCardStoreRandomCfgNoTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
  
  
-    let playCardHazardStoreNoTrump= new PlayCardHazardStoreCfg();
-    playCardHazardStoreNoTrump.add(12,playCardStoreRandomCfgNoTrump1);
-    playCardHazardStoreNoTrump.add(24,playCardStoreRandomCfgNoTrump2);
-    playCardHazardStoreNoTrump.add(36,playCardStoreRandomCfgNoTrump3);
-    playCardHazardStoreNoTrump.add(48,playCardStoreRandomCfgNoTrump4);
-    playCardHazardStoreNoTrump.add(60,playCardStoreRandomCfgNoTrump5);
-    playCardHazardStoreNoTrump.add(72,playCardStoreRandomCfgNoTrump6);
-    playCardHazardStoreNoTrump.add(84,playCardStoreRandomCfgNoTrump7);
-    playCardHazardStoreNoTrump.add(100,playCardStoreRandomCfgNoTrump8);
+    
+    this.playCardGameStoreCfg.add('allTrump', 12,playCardStoreRandomCfgTrump1);
+    this.playCardGameStoreCfg.add('allTrump',24,playCardStoreRandomCfgTrump2);
+    this.playCardGameStoreCfg.add('allTrump',36,playCardStoreRandomCfgTrump3);
+    this.playCardGameStoreCfg.add('allTrump',48,playCardStoreRandomCfgTrump4);
+    this.playCardGameStoreCfg.add('allTrump',60,playCardStoreRandomCfgTrump5);
+    this.playCardGameStoreCfg.add('allTrump',72,playCardStoreRandomCfgTrump6);
+    this.playCardGameStoreCfg.add('allTrump',84,playCardStoreRandomCfgTrump7);
+    this.playCardGameStoreCfg.add('allTrump',100,playCardStoreRandomCfgTrump8);
+
+
+    this.playCardGameStoreCfg.add('noTrump',12,playCardStoreRandomCfgNoTrump1);
+    this.playCardGameStoreCfg.add('noTrump',24,playCardStoreRandomCfgNoTrump2);
+    this.playCardGameStoreCfg.add('noTrump',36,playCardStoreRandomCfgNoTrump3);
+    this.playCardGameStoreCfg.add('noTrump',48,playCardStoreRandomCfgNoTrump4);
+    this.playCardGameStoreCfg.add('noTrump',60,playCardStoreRandomCfgNoTrump5);
+    this.playCardGameStoreCfg.add('noTrump',72,playCardStoreRandomCfgNoTrump6);
+    this.playCardGameStoreCfg.add('noTrump',84,playCardStoreRandomCfgNoTrump7);
+    this.playCardGameStoreCfg.add('noTrump',100,playCardStoreRandomCfgNoTrump8);
  
-    this.playCardGameStoreCfg.addTrump(playCardHazardStoreTrump);
-    this.playCardGameStoreCfg.addNoTrump(playCardHazardStoreNoTrump);
+    //debugger;
+    
     
  
    }
 
 
 
-  seedConfiguration():void {
-   let playCardStoreRandomCfgTrump1 = new PlayCardStoreRandomCfg();
-   playCardStoreRandomCfgTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.J,0,15));
-   playCardStoreRandomCfgTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
-
-
-   let playCardStoreRandomCfgTrump2 = new PlayCardStoreRandomCfg();
-   playCardStoreRandomCfgTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.J,0,15));
-   playCardStoreRandomCfgTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
-
-
-   let playCardHazardStoreTrump= new PlayCardHazardStoreCfg();
-   playCardHazardStoreTrump.add(55,playCardStoreRandomCfgTrump1);
-   playCardHazardStoreTrump.add(100,playCardStoreRandomCfgTrump2);
  
-   
-   let playCardStoreRandomCfgNoTrump1 = new PlayCardStoreRandomCfg();
-   playCardStoreRandomCfgNoTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.A,0,15));
-   playCardStoreRandomCfgNoTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
-
-
-   let playCardStoreRandomCfgNoTrump2 = new PlayCardStoreRandomCfg();
-   playCardStoreRandomCfgNoTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.A,0,15));
-   playCardStoreRandomCfgNoTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
-
-
-   let playCardHazardStoreNoTrump= new PlayCardHazardStoreCfg();
-   playCardHazardStoreNoTrump.add(55,playCardStoreRandomCfgNoTrump1);
-   playCardHazardStoreNoTrump.add(100,playCardStoreRandomCfgNoTrump2);
-
-   this.playCardGameStoreCfg.addTrump(playCardHazardStoreTrump);
-   this.playCardGameStoreCfg.addNoTrump(playCardHazardStoreNoTrump);
-   
-
-  }
 
 
    generateConfiguration(gameType:PlayCardGameType):PlayCardGameStore {
 
- 
+    this.playCardGameStoreCfg.clearCnt();
 
     let playCardRangeRandomCfg_Clubs: PlayCardStoreRandomCfg;
     let playCardRangeRandomCfg_Diamonds: PlayCardStoreRandomCfg;
@@ -200,44 +169,44 @@ export class PlayingCardServiceService {
 
     if (gameType==PlayCardGameType.AllTrump) {
 
-     playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getTrump();
-     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getTrump();
-     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getTrump();
-     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getTrump();
+     playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getRandom('allTrump');
+     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getRandom('allTrump');
+     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getRandom('allTrump');
+     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getRandom('allTrump');
     
      
 
     }  else if (gameType==PlayCardGameType.ClubsTrump)  {
 
-      playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getTrump();
-      playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getNoTrump();
-      playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getNoTrump();
-      playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getNoTrump();
+      playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getRandom('allTrump');
+      playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getRandom('noTrump');
+      playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getRandom('noTrump');
+      playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getRandom('noTrump');
     }  else if (gameType==PlayCardGameType.DiamondsTrump)  {
 
-      playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getTrump();
-     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getNoTrump();
+      playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getRandom('allTrump');
+     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getRandom('noTrump');
 
     }  else if (gameType==PlayCardGameType.HeartsTrump)  {
-      playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getNoTrump();
-      playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getNoTrump();
-      playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getTrump();
-      playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getNoTrump();
+      playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getRandom('noTrump');
+      playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getRandom('noTrump');
+      playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getRandom('allTrump');
+      playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getRandom('noTrump');
 
     }  else if (gameType==PlayCardGameType.SpadesTrump)  {
-     playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getTrump();
+     playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getRandom('allTrump');
 
     } else   {
 
-     playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getNoTrump();
-     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getNoTrump();
+     playCardRangeRandomCfg_Clubs=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Diamonds=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Heards=this.playCardGameStoreCfg.getRandom('noTrump');
+     playCardRangeRandomCfg_Spades=this.playCardGameStoreCfg.getRandom('noTrump');
 
     }
 

@@ -1,20 +1,22 @@
-<div>
-    <div class="main-table">
-        
-        <ul class="main-table-cardHolder">
-            
-                <app-playing-card *ngFor="let playCard of displayCard" [playCardInput]="playCard"></app-playing-card>
-           
-        </ul>
+<div style="position: relative">
 
-        <div class="main-table-buttons">
-        <button [disabled]="pickNextCardsIsDisabled" (click)="pickNextCards()">Next Cards {{appendCounterToPickBtn}}</button>
-        <button (click)="generate()">Generate</button>
-        <button (click)="changeShownNumber()">No {{numberBtnAppend}}</button>
-        <button (click)="changeGameType()">{{gameTypeButtonName}}</button>
-        <button >{{counterSec}} sec</button>
-        </div>
-    </div>
 
+<ng-template [ngIf]="displayCard.length>2">
+    <div class="parent" (click)="pickNextCards()" >
+    <app-playing-card class="cardTop" [playCardInput]="displayCard[0]"></app-playing-card>
+    <app-playing-card class="cardBottom" [playCardInput]="displayCard[1]"></app-playing-card>    
+    <app-playing-card class="cardLeft" [playCardInput]="displayCard[2]"></app-playing-card> 
+    <app-playing-card class="cardRight" [playCardInput]="displayCard[3]"></app-playing-card> 
+</div>
+</ng-template>
+
+<div style="position: relative">
+
+    <button [disabled]="pickNextCardsIsDisabled" (click)="pickNextCards()">Next Cards {{appendCounterToPickBtn}}</button>
+    <button (click)="generate()">Generate</button>
+    <!-- <button (click)="changeShownNumber()">No {{numberBtnAppend}}</button> -->
+    <button (click)="changeGameType()">{{gameTypeButtonName}}</button>
+    <button >{{counterSec}} sec</button>
+</div>
 
 </div>

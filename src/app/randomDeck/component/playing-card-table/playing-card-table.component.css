@@ -10,16 +10,55 @@ button {
     color: white;
     }
 
-.main-table  {
+.main-table9  {
         display: flex;
         flex-flow: column wrap;
         justify-content: center;
 }
 
-.main-table-cardHolder {
+.main-table-cardHolder9 {
     display: inline-flex;
     flex-wrap: wrap;
     justify-content: left; 
 }
 
 
+.parent {
+
+  
+   height: 600px;
+  
+    position: relative;
+    
+    
+  }
+
+
+  .cardTop {
+
+   position: absolute;
+   top: 0%;
+   left: 34%;
+  }
+  .cardBottom {
+
+    position: absolute;
+    top: 40%;
+    left: 34%;
+  }
+
+  .cardLeft {
+
+    position: absolute;
+    transform: rotate(90deg);
+    top: 20%;
+    left: 15%;
+  }
+
+  .cardRight {
+ 
+    position: absolute;
+    transform: rotate(270deg);
+    top: 20%;
+    right: 15%;
+  }

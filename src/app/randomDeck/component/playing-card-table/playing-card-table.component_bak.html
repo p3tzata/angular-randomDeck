@@ -1,0 +1,23 @@
+<div >
+    <div   >
+        
+        
+        
+            <ng-template [ngIf]="displayCard.length>2">
+                <div class="parent" >
+                <app-playing-card class="card1" [playCardInput]="displayCard[0]"></app-playing-card>
+                <app-playing-card class="card2" [playCardInput]="displayCard[1]"></app-playing-card>    
+            </div>
+            </ng-template>
+        
+        <div >
+        <button [disabled]="pickNextCardsIsDisabled" (click)="pickNextCards()">Next Cards {{appendCounterToPickBtn}}</button>
+        <button (click)="generate()">Generate</button>
+        <!-- <button (click)="changeShownNumber()">No {{numberBtnAppend}}</button> -->
+        <button (click)="changeGameType()">{{gameTypeButtonName}}</button>
+        <button >{{counterSec}} sec</button>
+        </div>
+    </div>
+
+
+</div>
