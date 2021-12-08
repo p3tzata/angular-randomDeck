@@ -53,38 +53,38 @@ export class PlayingCardServiceService {
    seedConfiguration_30112021():void {
     let playCardStoreRandomCfgTrump1 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.J,0,3));
-    playCardStoreRandomCfgTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
  
  
     let playCardStoreRandomCfgTrump2 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.J,4,7));
-    playCardStoreRandomCfgTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
  
     let playCardStoreRandomCfgTrump3 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump3.add(new PlayCardRangeRandomCfg(PlayCardCount.J,8,11));
-    playCardStoreRandomCfgTrump3.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump3.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
 
     let playCardStoreRandomCfgTrump4 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump4.add(new PlayCardRangeRandomCfg(PlayCardCount.J,12,15));
-    playCardStoreRandomCfgTrump4.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump4.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
 
 
     let playCardStoreRandomCfgTrump5 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump5.add(new PlayCardRangeRandomCfg(PlayCardCount.J,16,19));
-    playCardStoreRandomCfgTrump5.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump5.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
 
     let playCardStoreRandomCfgTrump6 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump6.add(new PlayCardRangeRandomCfg(PlayCardCount.J,20,23));
-    playCardStoreRandomCfgTrump6.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump6.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
 
 
     let playCardStoreRandomCfgTrump7 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump7.add(new PlayCardRangeRandomCfg(PlayCardCount.J,24,27));
-    playCardStoreRandomCfgTrump7.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump7.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
 
     let playCardStoreRandomCfgTrump8 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.J,28,31));
-    playCardStoreRandomCfgTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.N,16,31));
+    playCardStoreRandomCfgTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.N,7,27));
 
     
     //let playCardHazardStoreTrump= new PlayCardHazardStoreCfg();
@@ -92,38 +92,38 @@ export class PlayingCardServiceService {
     
     let playCardStoreRandomCfgNoTrump1 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.A,0,3));
-    playCardStoreRandomCfgNoTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump1.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
  
  
     let playCardStoreRandomCfgNoTrump2 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.A,4,7));
-    playCardStoreRandomCfgNoTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump2.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
  
     let playCardStoreRandomCfgNoTrump3 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump3.add(new PlayCardRangeRandomCfg(PlayCardCount.A,8,11));
-    playCardStoreRandomCfgNoTrump3.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump3.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
 
     let playCardStoreRandomCfgNoTrump4 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump4.add(new PlayCardRangeRandomCfg(PlayCardCount.A,12,15));
-    playCardStoreRandomCfgNoTrump4.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump4.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
 
 
     let playCardStoreRandomCfgNoTrump5 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump5.add(new PlayCardRangeRandomCfg(PlayCardCount.A,16,19));
-    playCardStoreRandomCfgNoTrump5.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump5.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
 
     let playCardStoreRandomCfgNoTrump6 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump6.add(new PlayCardRangeRandomCfg(PlayCardCount.A,20,23));
-    playCardStoreRandomCfgNoTrump6.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump6.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
 
 
     let playCardStoreRandomCfgNoTrump7 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump7.add(new PlayCardRangeRandomCfg(PlayCardCount.A,24,27));
-    playCardStoreRandomCfgNoTrump7.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump7.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
 
     let playCardStoreRandomCfgNoTrump8 = new PlayCardStoreRandomCfg();
     playCardStoreRandomCfgNoTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.A,28,31));
-    playCardStoreRandomCfgNoTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.T,16,31));
+    playCardStoreRandomCfgNoTrump8.add(new PlayCardRangeRandomCfg(PlayCardCount.T,7,27));
  
  
     
